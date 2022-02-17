@@ -1,0 +1,21 @@
+extends layouts/base.pug
+block content
+  h1(class="title") Vista de Productos(pug)
+  table(class="table table-dark table-borderless")
+    thead
+      tr(class="row-table")
+        th Nombre
+        th Precio
+        th Foto
+    tbody
+      each p in productos
+        tr(class="row-table")
+          td= p.title 
+          td= p.price 
+          td
+            img(src=p.thumbnail width="50px")
+      else
+       tr(class="row-table")
+          td(class="message" colspan="3") No se encontraron productos
+        
+    

@@ -1,0 +1,32 @@
+<html>
+  <%- include('partials/head') %>
+  <body>
+    <%- include('partials/nav') %>
+    <div class="container">
+      <h1 class="title">Vista de Productos(ejs)</h1>
+      <table class="table table-dark table-borderless">
+        <thead>
+          <tr class="row-table">
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Foto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if(productos.length != 0) { %> <%
+          productos.forEach(function(producto) { %>
+          <tr class="row-table">
+            <td><%= producto.title %></td>
+            <td><%= producto.price %></td>
+            <td><img src="<%= producto.thumbnail %>" width="50px" /></td>
+          </tr>
+          <% })} else {%>
+          <tr class="row-table">
+            <td class="message" colspan="3">No se encontraron productos</td>
+          </tr>
+          <% }%>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

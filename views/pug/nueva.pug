@@ -1,0 +1,16 @@
+extends layouts/base.pug
+block content
+  h1(class="title") Ingrese Producto
+  form(action="/pug/add" method="post")
+    div
+      label(for="title") Nombre
+      input(name="title")
+    div
+      label(for="price") Precio
+      input(name="price" type="number" step="0.01")
+    div
+      label(for="thumbnail") Foto URL
+      input(name="thumbnail")
+    div
+      button(type="submit") Enviar
+
